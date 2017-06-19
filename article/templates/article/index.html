@@ -1,0 +1,184 @@
+
+{% extends 'article/header.html' %}
+{% load staticfiles %}
+{% block main %}
+
+
+            <div id="test-modal" class="white-popup mfp-hide">
+                <p class="modal__h">Оставьте заявку</p>
+                <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
+                <form class="modal-write__form">
+                    <div class="modal-write__input-wrapp">
+                        <input placeholder="Ваше имя" class="modal-write__input">
+                        <input placeholder="Email или телефон" class="modal-write__input">
+                    </div><a href="#" class="modal-write__link">Отправить</a>
+                </form>
+            </div>
+        </div>
+        <div class="main-wrapper">
+            <div class="main">
+                <div class="container-wrapp">
+                    <div class="container">
+                        <div class="home-wrapp">
+                            <div class="guarantees-wrapp">
+                                <div class="guarantees">
+                                    <div class="guarantees__section">
+                                        <div class="guarantees__section-bg-assor"></div>
+                                        <div class="guarantees__section-wrapp">
+                                            <p class="guarantees__section-h">Широкий ассортимент</p>
+                                            <p class="guarantees__section-p">возможен подбор аналога</p>
+                                        </div>
+                                        <div class="guarantees__section-border"></div>
+                                    </div>
+                                    <div class="guarantees__section">
+                                        <div class="guarantees__section-bg-cons"> </div>
+                                        <div class="guarantees__section-wrapp">
+                                            <p class="guarantees__section-h">Самые низкие цены</p>
+                                            <p class="guarantees__section-p">От производителей для Вас</p>
+                                        </div>
+                                        <div class="guarantees__section-border"></div>
+                                    </div>
+                                    <div class="guarantees__section">
+                                        <div class="guarantees__section-bg-garant"></div>
+                                        <div class="guarantees__section-wrapp">
+                                            <p class="guarantees__section-h">Гарантия качества</p>
+                                            <p class="guarantees__section-p">гарантируем качество наших товаров</p>
+                                        </div>
+                                        <div class="guarantees__section-border"></div>
+                                    </div>
+                                    <div class="guarantees__section">
+                                        <div class="guarantees__section-bg-work"></div>
+                                        <div class="guarantees__section-wrapp">
+                                            <p class="guarantees__section-h">Работаем по всей </p>
+                                            <p class="guarantees__section-h">территории РФ и странам СНГ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-wrapp">
+                                <div class="slider slider--two-items">
+                                    <div id="pressPrev" class="slider--two-items__prev slider__prev">
+                                        <div class="slick__bg">
+                                            <div class="slick__bg-prev"></div>
+                                        </div>
+                                    </div>
+                                    <div id="pressNext" class="slider--two-items__next slider__next">
+                                        <div class="slick__bg">
+                                            <div class="slick__bg-next"></div>
+                                        </div>
+                                    </div>
+                                    <div id="mainSlider" class="slider_content slider--two-items__content">
+                                        <div class="slider__item slider--two-items__item"> <img src="{%static '/media/images/slider.png'%}" class="slick__img">
+                                            <p class="slider__text-h">Спецпредложения</p>
+                                            <p class="slider__text-p">Выгодные цены на ряд позиций из наличия</p><a href="#" class="slider__text-link"> Посмотреть</a>
+                                        </div>
+                                        <div class="slider__item slider--two-items__item"> <img src="{%static 'media/images/slider.png'%}" class="slick__img">
+                                            <p class="slider__text-h">Спецпредложения</p>
+                                            <p class="slider__text-p">Выгодные цены на ряд позиций из наличия</p><a href="#" class="slider__text-link"> Посмотреть</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-product-wrapp">
+                            <h2 class="main-product-wrapp__h">Каталог продукции</h2>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/dvigatel.png'%}" alt="Двигатель" class="main-product__img"></div>
+                                    <p class="main-product__p">Электродвигатели</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/насос1.png'%}" alt="Насос" class="main-product__img"></div>
+                                    <p class="main-product__p">Насосы</p>
+                                    <div class="main-product-hidden">
+                                        <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/насос1.png'%}" alt="Насос" class="main-product__img"></div>
+                                        <p class="main-product__p">Насосы</p><a href="#" class="main-product-hidden__text">Консольные К, КМ</a><a href="#" class="main-product-hidden__text">Погружные для чистой воды</a><a href="#" class="main-product-hidden__text">Шестеренные</a><a href="#" class="main-product-hidden__text">Вихревые</a><a href="#" class="main-product-hidden__text">Для отопления</a><a href="#" class="main-product-hidden__text">Станции управления СУиЗ</a><a href="#" class="main-product-hidden__text">Двухстроннего хода</a><a href="#" class="main-product-hidden__text">Сточно-массные</a><a href="#" class="main-product-hidden__text">Джилекс</a>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/motorreduktor.png'%}" alt="Редукторы" class="main-product__img"></div>
+                                    <p class="main-product__p">Редукторы</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/ventilatoe.png'%}" alt="Вентиляция" class="main-product__img"></div>
+                                    <p class="main-product__p">Вентиляция</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/CHP.png'%}" alt="Частотные преобразователи" class="main-product__img"></div>
+                                    <p class="main-product__p">Частотные преобразователи</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/UPP.png'%}" alt="Устройства плавного пуска" class="main-product__img"></div>
+                                    <p class="main-product__p">Устройства плавного пуска</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/avtomatika.png'%}" alt="Автоматика" class="main-product__img"></div>
+                                    <p class="main-product__p">Автоматика</p>
+                                </a>
+                            </div>
+                            <div class="main-product">
+                                <a href="#">
+                                    <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/Ventilator.png'%}" alt="Теплотехника" class="main-product__img"></div>
+                                    <p class="main-product__p">Теплотехника</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-bg"></div>
+                <div class="main-company-wrapp">
+                    <div class="container">
+                        <div class="main-old-company">
+                            <p class="main-old-company__p">Наша компания осуществляет оптовые и розничные поставки промышленного оборудования c 1993 года по всей территории РФ</p><a href="about.html" class="main-old-company__link">О компании</a>
+                        </div>
+                        <div class="main-brands">
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/logokit.gif'%}" alt="Китайский насосный завод" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/wilo_logo.png'%}" alt="Wilo" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/1280px-Motovario_logo.png'%}" alt="Motovario" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/Logotip-Eldin-250.png'%}" alt="Eldin" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/5аи.png'%}" alt="5аи" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/14467144_w0_h120_logo_instart.png'%}" alt="instart" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/esq.png'%}" alt="esq" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/head-logo.gif'%}" alt="мэз" class="main-product__img"></div>
+                            </div>
+                            <div class="main-brands__section">
+                                <div class="main-brands__img-wrapp img-container"><img src="{%static '/media/images/hyundai-logo.png'%}" alt="hyundai" class="main-product__img"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=tvb_RTgpP3uOOkINClo8DAo-f2EOJ4q4&width=100%&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
