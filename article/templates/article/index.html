@@ -3,18 +3,6 @@
 {% load staticfiles %}
 {% block main %}
 
-
-            <div id="test-modal" class="white-popup mfp-hide">
-                <p class="modal__h">Оставьте заявку</p>
-                <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
-                <form class="modal-write__form">
-                    <div class="modal-write__input-wrapp">
-                        <input placeholder="Ваше имя" class="modal-write__input">
-                        <input placeholder="Email или телефон" class="modal-write__input">
-                    </div><a href="#" class="modal-write__link">Отправить</a>
-                </form>
-            </div>
-        </div>
         <div class="main-wrapper">
             <div class="main">
                 <div class="container-wrapp">
@@ -128,12 +116,15 @@
                                     <p class="main-product__p">Автоматика</p>
                                 </a>
                             </div>
+                            {% for tovar in tovars  %}
                             <div class="main-product">
                                 <a href="#">
                                     <div class="img-container main-product__img-wrapp"><img src="{%static '/media/images/Ventilator.png'%}" alt="Теплотехника" class="main-product__img"></div>
                                     <p class="main-product__p">Теплотехника</p>
                                 </a>
                             </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>

@@ -7,25 +7,26 @@ from django.shortcuts import render_to_response
 # Create your views here.
 
 def index(request):
-	return render_to_response('article/index.html')
+    tovars =[]
+    for x in range(0, 2):
+        tovars.append(x)
+    context = {
+	    'tovars': tovars,
+	}
+    return render_to_response('article/index.html', context)
 
-#def basic_one(request):
-#	view = 'basic_one'
-#	html = "<html><body> This is %s view</html></body>" % view
-#	return HttpResponse(html)
 
-#def template_two(request):
-#	view = "template_two"
-#	t = get_template('myview.html')
-#	html = t.render(Context({'name': view}))
-#	return HttpResponse(html)
 
-#def template_three(request):
-#	view = "template_tree"
-#	return render_to_response('myview.html',{'name':view})
+def contact(request):
+   return render_to_response('article/contacts.html')
 
-#def articles(request):
-#	return render_to_response('articles.html',{'articles': Article.objects.all()})
+def spec(request):
+   return render_to_response('article/spec.html')
 
-#def article(request, article_id=1):
-#	return  render_to_response('article.html': {'article': Article.objects.get(id=article_id), 'comments': Comments.objects.filter(comments_article_id=article_id)})
+def about(request):
+    return render_to_response('article/about.html')
+
+def catalog(request):
+    return render_to_response('article/catalog.html')
+
+

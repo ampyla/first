@@ -1,58 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="viewport" content="initial-scale=1">
-    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="./media/images/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <div class="sticky-wrapper">
-      <div class="header-wrapper">
-        <header class="header">
-          <div class="container">
-            <div class="header-left-wrapp">
-              <div class="header-logo"><a href="#" class="header-logo__img-wrapp"><img src="./media/images/logo.png" alt="NSKDV" class="header-logo__img"></a></div>
-              <div class="header-company">
-                <p class="header-company__p-gray">ООО “Асинхронные двигатели”</p>
-                <p class="header-company__p">Оптовые и розничные поставки промышленного оборудования </p>
-              </div>
-            </div>
-            <div class="header-right-wrapp">
-              <div class="header-phone">
-                <div class="header-phone__bg"></div>
-                <div class="header-phone__p-wrapp">
-                  <p class="header-phone__p">+7(383) 262 62 04</p>
-                  <p class="header-phone__p">8 913 916 86 06</p>
-                </div>
-              </div>
-              <div class="header-call-back"><a href="#test-modal" class="header-call-back__link popup-modal">Обратный звонок</a></div>
-            </div>
-          </div>
-          <nav class="header-nav">
-            <div class="container">
-              <ul class="header-nav__item">
-                <li class="header-nav__list"><a href="about.html" class="header-nav__link">О компании</a></li>
-                <li class="header-nav__list"><a href="catalog.html" class="header-nav__link">Каталог</a></li>
-                <li class="header-nav__list"><a href="spec.html" class="header-nav__link">Спецпредложения</a></li>
-                <li class="header-nav__list"><a href="contacts.html" class="header-nav__link">Контакты</a></li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-        <div id="test-modal" class="white-popup mfp-hide">
-          <p class="modal__h">Оставьте заявку</p>
-          <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
-          <form class="modal-write__form">
-            <div class="modal-write__input-wrapp">
-              <input placeholder="Ваше имя" class="modal-write__input">
-              <input placeholder="Email или телефон" class="modal-write__input">
-            </div><a href="#" class="modal-write__link">Отправить</a>
-          </form>
-        </div>
-      </div>
+{%extends 'article/header.html'%}
+{% load static %}
+{% block main %}
+
       <div class="main-wrapper">
         <div class="main">
           <div class="container-wrapp">
@@ -149,46 +98,5 @@
         </div>
       </div>
     </div>
-    <div class="footer-wrapper">
-      <footer class="footer">
-        <div class="footer-contacts">
-          <p class="footer-contacts__p"> <span class="footer-contacts__p--gray">+7(383)</span> 292-86-06</p>
-          <p class="footer-contacts__p-address">г.Новосибирск ул.Никитина 75</p>
-        </div>
-        <div class="container">
-          <nav class="footer-nav">
-            <ul class="footer-nav__item">
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Спецпредложения</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">О компании</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Контакты</a></li>
-            </ul>
-          </nav>
-          <div class="footer-nav-border"></div>
-          <nav class="footer-nav">
-            <ul class="footer-nav__item">
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Элекродвигатели</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Насосы</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Редукторы </a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Вентиляция</a></li>
-            </ul>
-          </nav>
-          <nav class="footer-nav">
-            <ul class="footer-nav__item">
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Частотные преобразователи</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">УПП</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Автоматика</a></li>
-              <li class="footer-nav__list"><a href="#" class="footer-nav__link">Теплотехника</a></li>
-            </ul>
-          </nav>
-          <div class="footer-about-us">
-            <p class="footer-about-us__p">ООО "Асинхронные двигатели"</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="js/jquery-2.2.2.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-  </body>
-</html>
+
+{% endblock %}

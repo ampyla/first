@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    ('static' , 'C:\Django\\first\\article\static')
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    'C:\Django\\first\\article\static',
+]

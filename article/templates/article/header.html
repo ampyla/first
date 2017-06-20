@@ -1,5 +1,6 @@
-{% load staticfiles %}
 <!DOCTYPE html>
+{% load staticfiles %}
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,13 +13,14 @@
 </head>
 
 <body>
+
     <div class="sticky-wrapper">
         <div class="header-wrapper">
             <header class="header">
                 <div class="container">
                     <div class="header-left-wrapp">
                         <div class="header-logo">
-                            <a href="#" class="header-logo__img-wrapp"><img src="{% static '/media/images/logo.png '%}" alt="NSKDV" class="header-logo__img"></a>
+                            <a href="{% url 'index' %}" class="header-logo__img-wrapp"><img src="{% static '/media/images/logo.png '%}" alt="NSKDV" class="header-logo__img"></a>
                         </div>
                         <div class="header-company">
                             <p class="header-company__p-gray">ООО “Асинхронные двигатели”</p>
@@ -29,7 +31,7 @@
                         <div class="header-phone">
                             <div class="header-phone__bg"></div>
                             <div class="header-phone__p-wrapp">
-                                <p class="header-phone__p">+7(383) 262 62 04</p>
+                                <p class="header-phone__p">+7(383) 262 62 9904</p>
                                 <p class="header-phone__p">8 913 916 86 06</p>
                             </div>
                         </div>
@@ -39,19 +41,29 @@
                 <nav class="header-nav">
                     <div class="container">
                         <ul class="header-nav__item">
-                            <li class="header-nav__list"><a href="about.html" class="header-nav__link">О компании</a></li>
-                            <li class="header-nav__list"><a href="catalog.html" class="header-nav__link">Каталог</a></li>
-                            <li class="header-nav__list"><a href="spec.html" class="header-nav__link">Спецпредложения</a></li>
-                            <li class="header-nav__list"><a href="contacts.html" class="header-nav__link">Контакты</a></li>
+                            <li class="header-nav__list"><a href="{% url 'about' %}" class="header-nav__link">О компании</a></li>
+                            <li class="header-nav__list"><a href="{% url 'catalog' %}" class="header-nav__link">Каталог</a></li>
+                            <li class="header-nav__list"><a href="{% url 'spec' %}" class="header-nav__link">Спецпредложения</a></li>
+                            <li class="header-nav__list"><a href="{% url 'contact' %}" class="header-nav__link">Контакты</a></li>
                         </ul>
                     </div>
                 </nav>
             </header>
     </div>
     </div>
+
+            <div id="test-modal" class="white-popup mfp-hide">
+                <p class="modal__h">Оставьте заявку</p>
+                <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
+                <form class="modal-write__form">
+                    <div class="modal-write__input-wrapp">
+                        <input placeholder="Ваше имя" class="modal-write__input">
+                        <input placeholder="Email или телефон" class="modal-write__input">
+                    </div><a href="#" class="modal-write__link">Отправить</a>
+                </form>
+            </div>
+
 {% block main %} {% endblock %}
-
-
 
 <div class="footer-wrapper">
         <footer class="footer">
@@ -90,11 +102,10 @@
             </div>
         </footer>
     </div>
-    <script src="{% static 'js/jquery-2.2.2.min.js'%}"></script>
-    <script src="{% static 'js/app.js'%}"></script>
-    <script src="{% static 'js/slick.js%}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.js'%}"></script>
-        {% block js %} {% endblock %}
+    <script src="{% static 'js/jquery-2.2.2.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
 
 </body>
 
