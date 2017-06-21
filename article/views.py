@@ -3,13 +3,12 @@ from django.http.response import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
+from .models import Category
 #from article.models import Article
 # Create your views here.
 
 def index(request):
-    tovars =[]
-    for x in range(0, 2):
-        tovars.append(x)
+    tovars =Category.objects.all()
     context = {
 	    'tovars': tovars,
 	}

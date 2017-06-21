@@ -1,5 +1,13 @@
 from django.contrib import admin
-#from article.models import Article,Comments
+from models import *
+
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name','url')
+
+
+
 
 # Register your models here.
 #class ArticleInline(admin.StackedInline):
@@ -12,4 +20,4 @@ from django.contrib import admin
 #	inlines = [ArticleInline]
 #	list_filter = ['article_date']
 
-#admin.site.register(Article,ArticleAdmin)
+admin.site.register(Category, CategoryAdmin)
