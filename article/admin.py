@@ -1,10 +1,14 @@
+
 from django.contrib import admin
 from models import *
 
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name','url')
+    list_display = ('name',)
+
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ('id','name',)
 
 
 
@@ -21,3 +25,5 @@ class CategoryAdmin(admin.ModelAdmin):
 #	list_filter = ['article_date']
 
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Item, ItemAdmin)
+
