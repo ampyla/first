@@ -127,5 +127,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'C:\Django\\first\\article\static',
 ]
-MEDIA_URL = 'article/static/media/images/'
+MEDIA_URL = 'static/media/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'article/static/media/images/')

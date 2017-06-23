@@ -125,14 +125,16 @@
                             </div>
                             {% endfor %}
                             {% for tovar in tovars  %}
+                                <div class="main-product">
                                 <a href="#">
-                                    <div class="img-container main-product__img-wrapp"><img src="{{ tovar.images }}" alt="Насос" class="main-product__img"></div>
+                                    <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
                                     <p class="main-product__p">Насосы</p>
                                     <div class="main-product-hidden">
-                                        <div class="img-container main-product__img-wrapp"><img src="{{ tovar.images }}" alt="Насос" class="main-product__img"></div>
+                                        <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
                                         <p class="main-product__p">Насосы</p><a href="#" class="main-product-hidden__text">Консольные К, КМ</a><a href="#" class="main-product-hidden__text">Погружные для чистой воды</a><a href="#" class="main-product-hidden__text">Шестеренные</a><a href="#" class="main-product-hidden__text">Вихревые</a><a href="#" class="main-product-hidden__text">Для отопления</a><a href="#" class="main-product-hidden__text">Станции управления СУиЗ</a><a href="#" class="main-product-hidden__text">Двухстроннего хода</a><a href="#" class="main-product-hidden__text">Сточно-массные</a><a href="#" class="main-product-hidden__text">Джилекс</a>
                                     </div>
                                 </a>
+                                </div>
                             {% endfor %}
 
                         </div>

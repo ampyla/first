@@ -3,7 +3,7 @@ from django.http.response import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
-from .models import Category
+from .models import Category , Item
 #from article.models import Article
 # Create your views here.
 
@@ -11,6 +11,7 @@ def index(request):
     tovars =Category.objects.all()
     context = {
 	    'tovars': tovars,
+
 	}
     return render_to_response('article/index.html', context)
 
