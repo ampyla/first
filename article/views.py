@@ -4,14 +4,14 @@ from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
 from .models import Category , Item
-#from article.models import Article
 # Create your views here.
 
 def index(request):
     tovars =Category.objects.all()
 
     #get =get_object_or_404(Category,alias='aVTOMATIKA')
-    item = Item.objects.filter(category=tovars)
+    for item in tovars:
+        item = Item.objects.filter(category=tovars)
     context = {
 	    'tovars': tovars,
         'item': item,
