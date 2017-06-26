@@ -7,13 +7,12 @@ from .models import Category , Item
 # Create your views here.
 
 def index(request):
-    tovars =Category.objects.all()
+    category =Category.objects.all()
 
     #get =get_object_or_404(Category,alias='aVTOMATIKA')
-    for item in tovars:
-        item = Item.objects.filter(category=tovars)
+    item = Item.objects.filter(category_id=category)
     context = {
-	    'tovars': tovars,
+	    'category': category,
         'item': item,
 
 	}
