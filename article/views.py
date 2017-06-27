@@ -7,15 +7,12 @@ from .models import Category , Item
 # Create your views here.
 
 def index(request):
-    category =Category.objects.all()
+    categories = Category.objects.all().prefetch_related('item_set')
 
     #get =get_object_or_404(Category,alias='aVTOMATIKA')
-    item = Item.objects.filter(category_id=category)
     context = {
-	    'category': category,
-        'item': item,
-
-	}
+        'categories': categories
+    }
     return render_to_response('article/index.html', context)
 
 def get_category(request,alias):

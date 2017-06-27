@@ -117,14 +117,21 @@
                                 </a>
                             </div>
 
-                            {% for tovar in category  %}
+                            {% for tovar in categories   %}
                                 <div class="main-product">
                                 <a href="#">
                                     <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
                                     <p class="main-product__p">{{ tovar.name }}</p>
                                     <div class="main-product-hidden">
                                         <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt={{ tovar.alt }} class="main-product__img"></div>
-                                        <p class="main-product__p">{{ tovar.name }}</p>{% for items in item %}<a href="#" class="main-product-hidden__text">{{ items.name }}</a>{% endfor %}
+                                        <p class="main-product__p">{{ tovar.name }}</p>
+
+
+                                            {% for items in tovar.item_set.all %}
+
+                                                <a href="#" class="main-product-hidden__text">{{ items.name }}</a>
+
+                                            {% endfor %}
                                 </div>
                                 </a>
                                 </div>
