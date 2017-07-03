@@ -22,6 +22,7 @@ class Item(models.Model):
     image = models.ImageField(upload_to='images//%Y/%m/%d')
     alias = models.SlugField(verbose_name="Alias товара")
     alt = models.CharField(max_length=245, verbose_name="Подсказка")
+    content =models.TextField(max_length=500)
     category = models.ForeignKey(Category)
 
     class Meta:
