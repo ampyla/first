@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Category(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название категории')
@@ -22,7 +23,8 @@ class Item(models.Model):
     image = models.ImageField(upload_to='images//%Y/%m/%d')
     alias = models.SlugField(verbose_name="Alias товара")
     alt = models.CharField(max_length=245, verbose_name="Подсказка")
-    content =models.TextField(max_length=500)
+    content = RichTextUploadingField(blank=True,default='')
+
     category = models.ForeignKey(Category)
 
     class Meta:
