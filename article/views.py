@@ -15,13 +15,12 @@ def index(request):
     }
     return render_to_response('article/index.html', context)
 
-def get_category(request,alias):
-    category = get_object_or_404(Category, alias=alias)
-    tovars = Item.objects.filter(category=category)
+def get_item(request,alias):
+    item = get_object_or_404(Item, alias=alias)
     context = {
-        'tovars': tovars,
+        'item': item,
     }
-    return render_to_response('article/index.html', context)
+    return render_to_response('article/card-product.html', context)
 
 
 
