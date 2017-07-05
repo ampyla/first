@@ -3,6 +3,8 @@ from django.http.response import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Category , Item
 # Create your views here.
 
@@ -20,7 +22,8 @@ def get_item(request,alias):
     context = {
         'item': item,
     }
-    return render_to_response('article/card-product.html', context)
+
+    return render(request,'article/card-product.html', context)
 
 
 
