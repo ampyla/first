@@ -29,6 +29,7 @@ def get_item(request,alias):
 
 
 def contact(request):
+
    return render_to_response('article/contacts.html')
 
 def spec(request):
@@ -38,6 +39,12 @@ def about(request):
     return render_to_response('article/about.html')
 
 def catalog(request):
-    return render_to_response('article/catalog.html')
+    categories = Category.objects.all().prefetch_related('item_set')
+
+    context = {
+        'categories': categories
+    }
+
+    return render(request,'article/catalog.html',context)
 
 

@@ -13,13 +13,10 @@ class CategoryAdmin(admin.ModelAdmin):
 class ItemAdmin(admin.ModelAdmin):
     list_display = ('id','name',)
 
-    class Media:
-        js = (
-            '/static/tiny_mce/tiny_mce.js',
-            '/static/tiny_mce/tiny_mce_init.js',
-        )
 
 
+class SubItemAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 
 # Register your models here.
@@ -35,4 +32,4 @@ class ItemAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Item, ItemAdmin)
-
+admin.site.register(SubItem, SubItemAdmin)

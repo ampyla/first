@@ -35,3 +35,21 @@ class Item(models.Model):
 
     def __unicode__(self):
         return 'Товар %s' % self.name
+
+class SubItem(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name="Название подтовара")
+    image = models.ImageField(upload_to='images//%Y/%m/%d')
+    alias = models.SlugField(verbose_name="Alias товара")
+    alt = models.CharField(max_length=255, verbose_name="Подсказка")
+    caption_slider = models.CharField(max_length=255, verbose_name="Заголовок слайдера")
+    text_in_slider = models.TextField(max_length=255, verbose_name="Текст на слайдере")
+    content = RichTextUploadingField(blank=True, default='')
+    category = models.ForeignKey(Item, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Под Товар"
+        verbose_name_plural = "Под Товары"
+
+    def __unicode__(self):
+       return 'Под Товар %s' % self.name
