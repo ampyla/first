@@ -25,8 +25,11 @@ def get_item(request,alias):
 
     return render(request,'article/card-product.html', context)
 
+def get_categories(request,alias):
+    categories = get_object_or_404(Category, alias=alias)
+    details_categories = Item.objects.filter(category=categories)
 
-
+    return render(request,'article/card-categories.html',{'details_categories':details_categories})
 
 def contact(request):
 

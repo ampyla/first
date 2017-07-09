@@ -21,6 +21,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=255, verbose_name="Название товара")
     image = models.ImageField(upload_to='images//%Y/%m/%d')
+    file = models.FileField(upload_to='images//%Y/%m/%d',blank=True,verbose_name="Скачать каталог")
     alias = models.SlugField(verbose_name="Alias товара")
     alt = models.CharField(max_length=255, verbose_name="Подсказка")
     caption_slider=models.CharField(max_length=255,verbose_name="Заголовок слайдера")

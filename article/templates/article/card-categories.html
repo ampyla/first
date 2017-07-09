@@ -1,0 +1,30 @@
+{%extends 'article/header.html'%}
+{% load static %}
+{% block main %}
+
+      <div class="main-wrapper">
+        <div class="main">
+          <div class="container-wrapp">
+            <div class="container">
+              <nav class="main-nav">
+                <ul class="main-nav__item">
+                  <li class="main-nav__list"><a href="index.html" class="main-nav__link">Главная \</a></li>
+                  <li class="main-nav__list"><a href="#" class="main-nav__link">Насосы погружные для чистой воды</a></li>
+                </ul>
+              </nav>
+
+              <div class="card-product-dynamic">
+                <h2 class="card-product-dynamic__h">Описание</h2>
+                    {% for categori in details_categories %}
+                        {{categori.name}}
+                    {% endfor %}
+                </div>
+                </div>
+              </div>
+             <div class="main-bg"></div>
+            </div>
+          </div>
+
+
+
+{% endblock %}

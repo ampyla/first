@@ -25,7 +25,7 @@
 
                     {% for tovar in categories   %}
                                 <div class="main-product">
-                                <a href="#">
+                                <a href="{% url 'categories_details' alias=tovar.alias %}">
                                     <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
                                     <p class="main-product__p">{{ tovar.name }}</p>
                                     <div class="main-product-hidden">
