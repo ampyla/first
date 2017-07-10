@@ -2,6 +2,8 @@
 from __future__ import unicode_literals
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 class Category(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название категории')
@@ -54,3 +56,18 @@ class SubItem(models.Model):
 
     def __unicode__(self):
        return 'Под Товар %s' % self.name
+
+class Special(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Название")
+    price = models.ImageField(max_length=50, verbose_name="Цена")
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+
+    class Meta:
+        verbose_name = "Спецпредложение"
+        verbose_name_plural = "Спецпредложения"
+
+    def __unicode__(self):
+        return 'Спецпредложение %s' % self.name

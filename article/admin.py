@@ -19,6 +19,11 @@ class SubItemAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 
+
+class SpecialAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+
 # Register your models here.
 #class ArticleInline(admin.StackedInline):
 #	model = Comments
@@ -33,3 +38,4 @@ class SubItemAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Item, ItemAdmin)
 admin.site.register(SubItem, SubItemAdmin)
+admin.site.register(Special,SpecialAdmin)
