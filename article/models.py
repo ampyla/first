@@ -10,8 +10,6 @@ class Category(models.Model):
     image = models.ImageField(upload_to='images//%Y/%m/%d')
     alt = models.CharField(max_length=245, verbose_name="Подсказка")
     alias = models.SlugField(verbose_name='Alias категории')
-    def get_products(self):
-        Item.objects.filter(category=self)
 
     class Meta:
         verbose_name =u"Категория"
@@ -55,15 +53,13 @@ class SubItem(models.Model):
         verbose_name_plural = "Под Товары"
 
     def __unicode__(self):
-       return 'Под Товар %s' % self.name
+        return 'Под Товар %s' % self.name
 
 class Special(models.Model):
     name = models.CharField(max_length=255, verbose_name="Название")
-    price = models.ImageField(max_length=50, verbose_name="Цена")
-    content_type = models.ForeignKey(ContentType)
-    object_id = models.PositiveIntegerField()
-    content_object = GenericForeignKey('content_type', 'object_id')
-
+    price = models.IntegerField(max_length=50, verbose_name="Цена")
+    category = models.ForeignKey(Category, blank=True, null=True)
+    item = models.ForeignKey(Item, blank=True, null=True)
 
     class Meta:
         verbose_name = "Спецпредложение"

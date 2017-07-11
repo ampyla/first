@@ -38,4 +38,4 @@ class SpecialAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Item, ItemAdmin)
 admin.site.register(SubItem, SubItemAdmin)
-admin.site.register(Special,SpecialAdmin)
+admin.site.register(Special, SpecialAdmin)

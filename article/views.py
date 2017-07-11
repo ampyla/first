@@ -5,7 +5,7 @@ from django.template import Context
 from django.shortcuts import render_to_response
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Category , Item
+from .models import Category , Item, Special
 # Create your views here.
 
 def index(request):
@@ -36,7 +36,12 @@ def contact(request):
    return render_to_response('article/contacts.html')
 
 def spec(request):
-   return render_to_response('article/spec.html')
+    #list= Item.objects.all().prefetch_related('special_set')
+    tov_list = Special.objects.all()
+    context ={
+        'tov_list': tov_list,
+    }
+    return render(request,'article/spec.html',context)
 
 def about(request):
     return render_to_response('article/about.html')
@@ -48,6 +53,6 @@ def catalog(request):
         'categories': categories
     }
 
-    return render(request,'article/catalog.html',context)
+    return render(request, 'article/catalog.html', context)
 
 
