@@ -15,7 +15,7 @@
               <aside class="main-aside">
                 <div class="main-calalog-menu"><a href="#" class="main-calalog-menu__link">Предложения</a>
                     {% for list in tov_list %}
-                        <div class="main-calalog-menu__nav-wrapp"><a href="#" class="main-product-hidden__text">{{ list.item.name }}</a></div>
+                        <div class="main-calalog-menu__nav-wrapp"><a href="#" class="main-product-hidden__text">{{ list.item.name }}{{ list.category.name }}</a></div>
                     {% endfor %}
                 </div>
               </aside>
@@ -33,16 +33,18 @@
                           <th class="spec__th"></th>
                         </tr>
                       </tread>
+                        {% for list in tov_list %}
                       <tbody>
                         <tr>
-                          <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
-                          <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link">Купить</a></td>
+                          <td class="spec__td">{{list.name}}</td>
+                          <td class="spec__td">{{ list.price }} р.</td>
+                          <td class="spec__td spec__hover"><a href="#" class="spec__link ">Купить</a></td>
                         </tr>
+                        {% endfor %}
                         <tr>
                           <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
                           <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link">Купить</a></td>
+                          <td class="spec__td spec__hover"><a href="#test-modal" class="spec__link popup-modal">Купить</a></td>
                         </tr>
                         <tr>
                           <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
