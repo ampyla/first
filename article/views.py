@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Category , Item, Special
+from django.db.models import Q
 # Create your views here.
 
 def index(request):
@@ -44,14 +45,14 @@ def spec(request):
     return render(request,'article/spec.html',context)
 
 def spec_details(request,alias):
-    categories_spec = get_object_or_404(Category, alias=alias)
+    categories_spec = get_object_or_404(Category, alias=alias )
     item_spec = get_object_or_404(Item, alias=alias)
-    details_category_spec = Special.objects.filter(category=categories_spec)
-    details_item_spec = Special.objects.filter(item=item_spec)
+    details_category_spec = Special.objects.filter(Q(category=categories_spec) or Q(item=item_spec))
+    #details_item_spec = Special.objects.filter(item=item_spec)
 
     context = {
         'details_category_spec': details_category_spec,
-        'details_item_spec': details_item_spec
+        #'details_item_spec': details_item_spec
     }
 
     return  render(request,'article/spec-details.html', context)
