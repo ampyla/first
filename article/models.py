@@ -60,6 +60,7 @@ class Special(models.Model):
     price = models.IntegerField(max_length=50, verbose_name="Цена")
     category = models.ForeignKey(Category, blank=True, null=True)
     item = models.ForeignKey(Item, blank=True, null=True)
+    alias = models.SlugField(verbose_name="Alias товара")
 
     class Meta:
         verbose_name = "Спецпредложение"

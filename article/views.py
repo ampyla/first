@@ -43,6 +43,19 @@ def spec(request):
     }
     return render(request,'article/spec.html',context)
 
+def spec_details(request,alias):
+    categories_spec = get_object_or_404(Category, alias=alias)
+    item_spec = get_object_or_404(Item, alias=alias)
+    details_category_spec = Special.objects.filter(category=categories_spec)
+    details_item_spec = Special.objects.filter(item=item_spec)
+
+    context = {
+        'details_category_spec': details_category_spec,
+        'details_item_spec': details_item_spec
+    }
+
+    return  render(request,'article/spec-details.html', context)
+
 def about(request):
     return render_to_response('article/about.html')
 
