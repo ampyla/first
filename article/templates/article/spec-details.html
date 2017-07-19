@@ -1,70 +1,18 @@
-﻿{%extends 'article/header.html'%}
+﻿{%extends 'article/spec.html'%}
 {% load static %}
-{% block main %}
+{% block spec %}
 
-      <div class="main-wrapper">
-        <div class="main">
-          <div class="container-wrapp">
-            <div class="container">
-              <nav class="main-nav">
-                <ul class="main-nav__item">
-                  <li class="main-nav__list"><a href="index.html" class="main-nav__link">Главная \</a></li>
-                  <li class="main-nav__list"><a href="#" class="main-nav__link">Предложения</a></li>
-                </ul>
-              </nav>
+    {% for list in details_category_spec %}
+        <tbody>
+        <tr>
+            <td class="spec__td">{{list.name}}</td>
+            <td class="spec__td">{{ list.price }} р.</td>
+            <td class="spec__td spec__hover"><a href="#test-modal" class="spec__link popup-modal">Купить</a></td>
+        </tr>
+    {% endfor %}
 
-              <div class="main-spec-wrapp">
-                <h1 class="main-spec__h">Спецпредложения</h1>
-                <h2 class="main-catalog-spec__h">Насосы</h2>
-                <p>Распродажа на ряд позиций из наличия</p>
-                <div class="spec-catalog">
-                  <div class="spec-table-wrapp">
-                    <table cellspacing="0" class="spec__table">
-                      <tread>
-                        <tr>
-                          <th class="spec__th">Название</th>
-                          <th class="spec__th">Цена</th>
-                          <th class="spec__th"></th>
-                        </tr>
-                      </tread>
-                        {% for list in details_item_s %}
-                      <tbody>
-                        <tr>
-                          <td class="spec__td">{{list.name}}</td>
-                          <td class="spec__td">{{ list.price }} р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link ">Купить</a></td>
-                        </tr>
-                        {% endfor %}
-                        <tr>
-                          <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
-                          <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#test-modal" class="spec__link popup-modal">Купить</a></td>
-                        </tr>
-                        <tr>
-                          <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
-                          <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link">Купить</a></td>
-                        </tr>
-                        <tr>
-                          <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
-                          <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link">Купить</a></td>
-                        </tr>
-                        <tr>
-                          <td class="spec__td">Насос GRUNDFOS SLV 65.65.11.A.2.1.502 (96106575)</td>
-                          <td class="spec__td">45 000 р.</td>
-                          <td class="spec__td spec__hover"><a href="#" class="spec__link">Купить</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="main-bg"></div>
-        </div>
-      </div>
-    </div>
+
+</tbody>
+
 
 {% endblock %}
