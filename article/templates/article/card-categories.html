@@ -13,18 +13,28 @@
                 </ul>
               </nav>
 
-              <div class="card-product-dynamic">
-                <h2 class="card-product-dynamic__h">Описание</h2>
-                    {% for categori in details_categories %}
-                        {{categori.name}}
+              <div class="main-product-wrapp">
+                  <h2 class="main-product-wrapp__h">Каталог продукции</h2>
+                    {% for tovar in details_categories %}
+                        <div class="main-product">
+                         <a href="#">
+                            <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
+                            <p class="main-product__p">{{ tovar.name }}</p>
+                            <div class="main-product-hidden">
+                            <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt={{ tovar.alt }} class="main-product__img"></div>
+                            <p class="main-product__p">{{ tovar.name }}</p>
+                           </div>
+                        </a>
+                        </div>
                     {% endfor %}
-                </div>
+
+
+
                 </div>
               </div>
+          </div>
              <div class="main-bg"></div>
             </div>
-          </div>
-
-
+      </div>
 
 {% endblock %}

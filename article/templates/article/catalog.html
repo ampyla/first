@@ -35,7 +35,7 @@
 
                                             {% for items in tovar.item_set.all %}
 
-                                                <a href="/catalog/{{ items.alias }}/" class="main-product-hidden__text">{{ items.name }}</a>
+                                                <a href="/catalog/{{ tovar.alias }}/{{ items.alias }}/" class="main-product-hidden__text">{{ items.name }}</a>
 
                                             {% endfor %}
                                 </div>
