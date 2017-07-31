@@ -133,3 +133,10 @@ MEDIA_URL = '/static/media/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'article/static/media/images/')
 CKEDITOR_UPLOAD_PATH = 'uploads'
 CKEDITOR_IMAGE_BACKEND = "pillow"
+
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "e-egoza@mail.ru"
+EMAIL_HOST_PASSWORD = "bravo112169"
+EMAIL_USE_TLS = True

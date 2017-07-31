@@ -7,6 +7,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Category , Item, Special
 from django.core.exceptions import ObjectDoesNotExist
+from form import *
+from django.core.mail import send_mail
 from django.db.models import Q
 # Create your views here.
 
@@ -103,5 +105,25 @@ def catalog(request):
     }
 
     return render(request, 'article/catalog.html', context)
+
+def contactform(request):
+    if request=='POST':
+        form =ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data('subject')
+            sender =form.cleaned_data('sender')
+            message = form.cleaned_data('message')
+            copy = form.cleaned_data('copy')
+
+            reception = ['e-egoza@mail.ru']
+            try:
+                send_mail(subject,message,)
+            except:
+                return HttpResponse('Nooooooooo')
+
+            return HttpResponseRedirect('article/thanks')
+    else:
+        form=ContactForm()
+
 
 
