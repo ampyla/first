@@ -107,23 +107,24 @@ def catalog(request):
     return render(request, 'article/catalog.html', context)
 
 def contactform(request):
-    if request=='POST':
+    if request.method=='POST':
         form =ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data('subject')
             sender =form.cleaned_data('sender')
-            message = form.cleaned_data('message')
-            copy = form.cleaned_data('copy')
+            #message = form.cleaned_data('message')
+            #copy = form.cleaned_data('copy')
 
             reception = ['e-egoza@mail.ru']
             try:
-                send_mail(subject,message,)
+                send_mail(subject,)
             except:
                 return HttpResponse('Nooooooooo')
 
             return HttpResponseRedirect('article/thanks')
     else:
-        form=ContactForm()
+        form =  ContactForm()
+        return render (request,'article/index.html',{'form':form})
 
 
 
