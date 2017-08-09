@@ -54,7 +54,7 @@
             <div id="test-modal" class="white-popup mfp-hide">
                 <p class="modal__h">Оставьте заявку</p>
                 <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
-                <form class="modal-write__form" method = "POST" action="{% url 'contactform' %} ">
+                <form class="modal-write__form" method = "POST" action="{% url 'contactform' %}" id="post-form">
                     {% csrf_token %}
                     <div class="modal-write__input-wrapp">
                         {{ form }}
@@ -110,6 +110,7 @@
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/slick.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/forma.js' %}"></script>
 
 </body>
 
