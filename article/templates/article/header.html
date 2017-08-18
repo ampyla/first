@@ -54,14 +54,14 @@
             <div id="test-modal" class="white-popup mfp-hide">
                 <p class="modal__h">Оставьте заявку</p>
                 <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
-                <form class="modal-write__form" method = "POST" id="post-form">
+                <form class="modal-write__form" method = "POST" id="post-form" action="">
                     {% csrf_token %}
                     <div class="modal-write__input-wrapp">
                         {{ form }}
                         <input placeholder="Ваше имя" class="modal-write__input">
                         <input placeholder="Email или телефон" class="modal-write__input">
                     </div><a href="#" class="modal-write__link">Отправить</a>
-                    <button type="submit" class="save bth bth-default">Save</button>
+                    <button type="submit" class="modal-write__link">Save</button>
                 </form>
             </div>
 

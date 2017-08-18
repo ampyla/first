@@ -117,7 +117,7 @@ def contactform(request):
 
             reception = ['e-egoza@mail.ru']
             try:
-                send_mail(subject,)
+                send_mail(subject,'Here is the message.', 'e-egoza@mail.ru',['e-egoza@mail.ru'], fail_silently=False)
             except:
                 return HttpResponse('Nooooooooo')
 
