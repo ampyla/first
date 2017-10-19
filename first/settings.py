@@ -127,7 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    'C:\Django\\first\\article\static',
+    'home/demm/django/first/article/static',
+    #'C:\Django\\first\\article\static',
 ]
 MEDIA_URL = '/static/media/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'article/static/media/images/')

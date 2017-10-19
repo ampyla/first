@@ -39,18 +39,27 @@
                 <div class="contacts-map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=vrFkxp6j7Cnatf-5pQPna-Shw8KR_jdq&width=565&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script></div>
               </div>
             </div>
-            <div class="contact-write">
+              {% if  messages %}
+                  {% for msg in messages %}
+                      <div class="success-message-alert"><p>{{msg}}</p></div>
+                    {% endfor %}
+              {% else %}
+                  <div class="contact-write">
               <p class="contact-write__p">Напишите нам</p>
-              <form class="contact-write__form">
+              <form action="{% url 'contact'%}"  method="post" class="contact-write__form">
+                  {% csrf_token %}
                 <div class="contact-write__input-wrapp">
-                  <input placeholder="Ваше имя" class="contact-write__input">
-                  <input placeholder="Email или телефон" class="contact-write__input">
+                    {{ form.subject }}
+                    {{ form.sender }}
                 </div>
                 <div class="contact-write__textarea-wrapp">
-                  <textarea placeholder="Собщение" class="contact-write__textarea"></textarea>
-                </div><a href="#" class="contact-write__link">Отправить</a>
+                    {{ form.message_mail }}
+                </div><input type="submit" class="contact-write__link" value="Отправить"/>
+
               </form>
             </div>
+
+              {% endif %}
           </div>
           <div class="main-bg"></div>
         </div>

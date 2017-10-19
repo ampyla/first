@@ -15,9 +15,10 @@
               <h1>О компании</h1>
               <div class="about-us-wrapp">
                 <article class="about-us">
-                  <h2 class="about-us__h">ООО "Асинхронные двигатели"</h2>
-                  <p>Наша компания осуществляет оптовые и розничные поставки промышленного оборудования с 1993 года. За это время мы зарекомендовали себя как надежный поставкщик качественного оборудования по доступным ценам. </p>
-                  <p>Большой складской запас продукции позволяет быстро удовлетворять практически любой заказ потребителей. А наши специалисты ответят на все ваши вопросы!</p>
+                    <h2 class="about-us__h">{{ abouts.title }}</h2>
+                    {% autoescape off %}
+                        {{ abouts.content }}
+                    {% endautoescape %}
                 </article>
                 <div class="guarantees-wrapp guarantees-about-us">
                   <div class="guarantees">
@@ -47,49 +48,49 @@
               </div>
               <div class="basic-production">
                 <h2 class="basic-production__h">Основная продукция компании</h2>
-                <div class="basic-production__section"><a href="#" class="main-product-hidden__text">Электродвигатели</a><a href="#" class="main-product-hidden__text">Насосы промышленные Российские</a><a href="#" class="main-product-hidden__text">Насосы промышленные и бытовыеWilo, Grundfos, Джилекс</a></div>
+                <div class="basic-production__section"><a href="/catalog/Nasosi" class="main-product-hidden__text">Электродвигатели</a><a href="#" class="main-product-hidden__text">Насосы промышленные Российские</a><a href="#" class="main-product-hidden__text">Насосы промышленные и бытовыеWilo, Grundfos, Джилекс</a></div>
                 <div class="basic-production__section"><a href="#" class="main-product-hidden__text">Редукторы, мотор-редукторы</a><a href="#" class="main-product-hidden__text">Частотные преобразователи ESQ, Hyundai, Schneider, ABB, Danfoss, Веспер</a><a href="#" class="main-product-hidden__text">Устройства плавного пуска Веспер, Instart</a></div>
                 <div class="basic-production__section"><a href="#" class="main-product-hidden__text">Автоматика для электродвигателей</a><a href="#" class="main-product-hidden__text">Тепловое оборудование Hintek</a><a href="#" class="main-product-hidden__text">Кондиционеры, сплит-системы Haier</a><a href="#" class="main-product-hidden__text">Вентиляционное оборудование</a></div>
               </div>
               <div class="brands">
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/Лидер.png" alt="Лидер" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/Лидер.png' %}" alt="Лидер" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/logokit.gif" alt="китайский насосный завод" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/logokit.gif' %}" alt="китайский насосный завод" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/wilo_logo.png" alt="wilo" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/wilo_logo.png' %}" alt="wilo" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/1280px-Motovario_logo.png" alt="Motovario" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/1280px-Motovario_logo.png' %}" alt="Motovario" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/Logotip-Eldin-250.png" alt="Eldin" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/Logotip-Eldin-250.png' %}" alt="Eldin" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/5аи.png" alt="5аи" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/5аи.png' %}" alt="5аи" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/logo-grundfos.png" alt="grundfos" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/logo-grundfos.png' %}" alt="grundfos" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/vesper_logo.png" alt="vesper" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/vesper_logo.png' %}" alt="vesper" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/14467144_w0_h120_logo_instart.png" alt="instart" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/14467144_w0_h120_logo_instart.png' %}" alt="instart" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/esq.png" alt="esq" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/esq.png' %}" alt="esq" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/head-logo.gif" alt="мэз" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/head-logo.gif' %}" alt="мэз" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/hyundai-logo.png" alt="hyundai" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/hyundai-logo.png' %}" alt="hyundai" class="main-product__img"></div>
                 </div>
                 <div class="brands__section">
-                  <div class="main-brands__img-wrapp img-container"><img src="./media/images/logo_prompribor.png" alt="prompribor" class="main-product__img"></div>
+                  <div class="main-brands__img-wrapp img-container"><img src="{% static '/media/images/logo_prompribor.png' %}" alt="prompribor" class="main-product__img"></div>
                 </div>
               </div>
             </div>

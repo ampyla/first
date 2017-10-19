@@ -4,22 +4,53 @@
 
 $('#post-form').on('submit', function(event){
     event.preventDefault();
-    console.log("form submitted!")  // sanity check
+    console.log("form submitted!")
+    //$('#post-form').hide() // нужно вместе с нижним
+    //$('#test-modal').append('<div id="loading-image"><img src="http://cdn.osxdaily.com/wp-content/uploads/2013/07/dancing-banana.gif" id="loaderDiv"/></div>') //подменяем подалку
+
+    var modalWindow = $('#test-modal');
+
+    if (!modalWindow.hasClass('loading')) {
+        modalWindow.addClass('loading');
+        modalWindow.find('input').attr('disabled', 'disabled');
+
+
+
+
     contactform();
-});
+}});
 
 function contactform() {
    console.log("create post is working!") // sanity check
+
     $.ajax({
-        url : "contactform/", // the endpoint
+        url : "/contactform/", // the endpoint
         type : "POST", // http method
-        data : { the_post : $('#post-text').val() }, // data sent with the post request
+        cache: false,
+
+
+        data : {
+            //csrfmiddlewaretoken: '{{csrf_token}}',
+            name : $('#name').val(),
+            email : $('#email').val(),
+            //csrfmiddlewaretoken: '{{csrf_token}}',
+
+
+
+        },
+
+
+
+        //data : { the_post : $('#post-text').val() }, // data sent with the post request
 
         // handle a successful response
         success : function(json) {
             $('#post-text').val(''); // remove the value from the input
             console.log(json); // log the returned json to the console
-            console.log("success"); // another sanity check
+            console.log("successs"); // another sanity check
+             //$('#loading-image').remove(); //удаляем всё старое
+             $('#test-modal').removeClass('loading');
+            $('#test-modal').html('<div>Отправленно, работает</div>') //подменяем новой инфой
         },
 
         // handle a non-successful response
@@ -78,7 +109,9 @@ $(function() {
     }
 
     $.ajaxSetup({
+
         beforeSend: function(xhr, settings) {
+
             if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
                 // Send the token to same-origin, relative URLs only.
                 // Send the token only if the method warrants CSRF protection

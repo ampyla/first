@@ -15,7 +15,13 @@
               <aside class="main-aside">
                 <div class="main-calalog-menu"><a href="#" class="main-calalog-menu__link">Предложения</a>
                     {% for list in tov_list %}
-                        <div class="main-calalog-menu__nav-wrapp"><a href="/spec-details/{%firstof list.item.alias  list.category.alias %}" class="main-product-hidden__text">{{ list.item.name }}{{ list.category.name }}</a></div>
+                    {% ifchanged %}
+                        <div class="main-calalog-menu__nav-wrapp"><a href="/spec-details/{%firstof list.item.alias  list.category.alias %}" class="main-product-hidden__text">
+
+
+                            {{ list.item.name }}{{ list.category.name }}</a></div>
+                            {% endifchanged %}
+
                     {% endfor %}
                 </div>
               </aside>

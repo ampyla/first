@@ -68,3 +68,26 @@ class Special(models.Model):
 
     def __unicode__(self):
         return 'Спецпредложение %s' % self.name
+
+
+class About (models.Model):
+    title = models.CharField(max_length=255, verbose_name="Заголовок")
+    content = RichTextUploadingField(blank=True, default='')
+    alias = models.SlugField(verbose_name="Alias о_компании")
+
+    class Meta:
+        verbose_name ="О компании"
+        verbose_name_plural = "О компании"
+
+    def __unicode__(self):
+        return 'О компании %s' % self.title
+
+class Slider(models.Model):
+    image = models.ImageField(upload_to='images//%Y/%m/%d')
+    url = models.URLField(blank=True, null=True)
+
+    class Meta:
+        verbose_name="Слайдер"
+        verbose_name_plural= "Слайдер"
+    def __unicode__(self):
+        return 'Слайдер %s' % self.url

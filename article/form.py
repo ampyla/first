@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django import forms
 
+
 class ContactForm(forms.Form):
-    subject = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'id': 'post-text', 'required': True,'size':'40','class': 'modal-write__input','placeholder': 'subject'}))
-    sender = forms.EmailField(widget=forms.TextInput(attrs={'size':'40','class': 'modal-write__input'}))
-    #message = forms.CharField(widget=forms.Textarea(attrs={'class': 'modal-write__input'}))
+    subject = forms.CharField(max_length=100, label=False, widget=forms.TextInput(attrs={'id': 'post-text', 'required': True,'class': 'contact-write__input','placeholder': 'Имя'}))
+    sender = forms.EmailField(label=False ,widget=forms.TextInput(attrs={'class': 'contact-write__input','placeholder': 'Почта'}))
+    message_mail = forms.CharField(label=False, widget=forms.Textarea(attrs={'class': 'contact-write__textarea','placeholder': 'Почта'}))
     #copy = forms.BooleanField(required=False)
 
     #widget = forms.TextInput(attrs={'placeholder': 'Search'}))

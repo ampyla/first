@@ -55,15 +55,21 @@
                                             <div class="slick__bg-next"></div>
                                         </div>
                                     </div>
-                                    <div id="mainSlider" class="slider_content slider--two-items__content">
-                                        <div class="slider__item slider--two-items__item"> <img src="{%static '/media/images/slider.png'%}" class="slick__img">
-                                            <p class="slider__text-h">Спецпредложения</p>
-                                            <p class="slider__text-p">Выгодные цены на ряд позиций из наличия</p><a href="#" class="slider__text-link"> Посмотреть</a>
+                                <div id="mainSlider" class="slider_content slider--two-items__content">
+                                    {% for slider in sliders %}
+
+                                        <div class="slider__item slider--two-items__item">
+                                            {% if slider.url %}
+                                                <a href="{{ slider.url }}" ><img src="{{slider.image.url}}" class="slick__img"></a>
+
+                                             {% else %}
+                                                <img src="{{slider.image.url}}" class="slick__img">
+
+                                            {% endif %}
                                         </div>
-                                        <div class="slider__item slider--two-items__item"> <img src="{%static 'media/images/slider.png'%}" class="slick__img">
-                                            <p class="slider__text-h">Спецпредложения</p>
-                                            <p class="slider__text-p">Выгодные цены на ряд позиций из наличия</p><a href="#" class="slider__text-link"> Посмотреть</a>
-                                        </div>
+
+                                    {% endfor %}
+
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +125,7 @@
 
                             {% for tovar in categories   %}
                                 <div class="main-product">
-                                <a href="#">
+                                <a href="/catalog/{{tovar.alias}}">
                                     <div class="img-container main-product__img-wrapp"><img src="{{ tovar.image.url }}" alt="Насос" class="main-product__img"></div>
                                     <p class="main-product__p">{{ tovar.name }}</p>
                                     <div class="main-product-hidden">
@@ -129,7 +135,7 @@
 
                                             {% for items in tovar.item_set.all %}
 
-                                                <a href="/catalog/{{ items.alias }}/" class="main-product-hidden__text">{{ items.name }}</a>
+                                                <a href="/catalog/{{ tovar.alias }}/{{ items.alias }}/" class="main-product-hidden__text">{{ items.name }}</a>
 
                                             {% endfor %}
                                 </div>

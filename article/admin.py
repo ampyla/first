@@ -24,6 +24,13 @@ class SpecialAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+
+class SliderAdmin(admin.ModelAdmin):
+    list_display =('url',)
+
 # Register your models here.
 #class ArticleInline(admin.StackedInline):
 #	model = Comments
@@ -39,3 +46,5 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Item, ItemAdmin)
 admin.site.register(SubItem, SubItemAdmin)
 admin.site.register(Special, SpecialAdmin)
+admin.site.register(About, AboutAdmin)
+admin.site.register(Slider,SliderAdmin)

@@ -20,7 +20,7 @@
                 <div class="container">
                     <div class="header-left-wrapp">
                         <div class="header-logo">
-                            <a href="{% url 'index' %}" class="header-logo__img-wrapp"><img src="{% static '/media/images/logo.png '%}" alt="NSKDV" class="header-logo__img"></a>
+                            <a href="{% url 'index' %}" class="header-logo__img-wrapp"><img src="{% static '/media/images/logo.png'%}" alt="NSKDV" class="header-logo__img"></a>
                         </div>
                         <div class="header-company">
                             <p class="header-company__p-gray">ООО “Асинхронные двигатели”</p>
@@ -50,16 +50,14 @@
                 </nav>
             </header>
     </div>
-
             <div id="test-modal" class="white-popup mfp-hide">
                 <p class="modal__h">Оставьте заявку</p>
                 <p class="modal__p">Мы Вам перезвоним в течении 10 минут</p>
-                <form class="modal-write__form" method = "POST" id="post-form" action="">
+                <form class="modal-write__form" id="post-form" >
                     {% csrf_token %}
-                    <div class="modal-write__input-wrapp">
-                        {{ form }}
-                        <input placeholder="Ваше имя" class="modal-write__input">
-                        <input placeholder="Email или телефон" class="modal-write__input">
+                    <div class="modal-write__input-wrapp" id="tests">
+                        <input placeholder="Ваше имя" class="modal-write__input" id="name">
+                        <input placeholder="Email или телефон" class="modal-write__input" id="email">
                     </div><a href="#" class="modal-write__link">Отправить</a>
                     <button type="submit" class="modal-write__link">Save</button>
                 </form>
@@ -78,9 +76,9 @@
             <div class="container">
                 <nav class="footer-nav">
                     <ul class="footer-nav__item">
-                        <li class="footer-nav__list"><a href="#" class="footer-nav__link">Спецпредложения</a></li>
-                        <li class="footer-nav__list"><a href="#" class="footer-nav__link">О компании</a></li>
-                        <li class="footer-nav__list"><a href="#" class="footer-nav__link">Контакты</a></li>
+                        <li class="footer-nav__list"><a href="{% url 'spec' %}" class="footer-nav__link">Спецпредложения</a></li>
+                        <li class="footer-nav__list"><a href="{% url 'about' %}" class="footer-nav__link">О компании</a></li>
+                        <li class="footer-nav__list"><a href="{% url 'contact' %}" class="footer-nav__link">Контакты</a></li>
                     </ul>
                 </nav>
                 <div class="footer-nav-border"></div>
@@ -106,6 +104,7 @@
             </div>
         </footer>
     </div>
+    <img src="http://cdn.osxdaily.com/wp-content/uploads/2013/07/dancing-banana.gif" id="loaderDiv" style="display:none;" />
     <script src="{% static 'js/jquery-2.2.2.min.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
     <script src="{% static 'js/slick.js' %}"></script>

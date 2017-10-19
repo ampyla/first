@@ -1135,6 +1135,19 @@ ul.sub-nav__item li {
 .modal-write__link:hover {
     background-color: #f00003;
 }
+.success-message-alert {
+  margin: 45px 0px;
+}
+
+
+.success-message-alert p {
+  text-align: center;
+  background-color: #dff0d8;
+  padding: 10px;
+  border-radius: 10px;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
 
 .white-popup {
     position: relative;
@@ -2300,6 +2313,15 @@ td:last-child {
     display: inline-block;
     vertical-align: top;
     padding-left: 30px;
+}
+
+
+#modal.loading {
+  background: url(http://cdn.osxdaily.com/wp-content/uploads/2013/07/dancing-banana.gif) center center no-repeat #fff;
+}
+
+#modal.loading * {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1000px) {
